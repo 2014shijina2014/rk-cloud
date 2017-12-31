@@ -47,7 +47,7 @@ public class CoreUserInfokeyWeb extends BaseController<CoreUserInfokey> {
 		page = coreUserInfokeyService.selectModelListPage(params, page,orderList);
 		return page;
 	}
-	@RequestMapping(value = "queryList", method = RequestMethod.POST)
+	@RequestMapping(value = "queryList", method = RequestMethod.GET)
 	public @ResponseBody Object queryList(String keyCode, String keyName) {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("keyCode", "%" + keyCode + "%");

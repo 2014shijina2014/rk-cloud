@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(value="sysService")
+@FeignClient(value="sysService",fallback = TestCloudServiceImpl.class)
 public interface ITestCloudService {
 
 	@RequestMapping(value="/rk/web/core/sys/param/queryList",method = RequestMethod.GET)
