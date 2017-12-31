@@ -5,14 +5,17 @@
 package org.rk.cloud.officeservice.excel.mapping.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.rk.cloud.officeservice.excel.mapping.testcloud.ITestCloudService;
 import org.rk.core.common.bean.PageData;
 import org.rk.core.pubServer.controller.BaseController;
 import org.rk.core.tools.office.mapping.ToolOfficeExcelMapping;
 import org.rk.core.tools.office.mapping.service.IToolOfficeExcelMappingService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,6 +30,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ToolOfficeExcelMappingWeb extends BaseController<ToolOfficeExcelMapping> {
 	@Resource(name = "ToolOfficeExcelMappingService")
 	private IToolOfficeExcelMappingService toolOfficeExcelMappingService;
+	@Autowired
+	private ITestCloudService testCloudService;
 
 	@RequestMapping(value = "queryPage", method = RequestMethod.POST)
 	public @ResponseBody Object queryList(int start, int length, int draw, String fieldName, String localField, String resourceField) {
@@ -42,10 +47,16 @@ public class ToolOfficeExcelMappingWeb extends BaseController<ToolOfficeExcelMap
 		return page;
 	}
 
-	@RequestMapping(value = "query", method = RequestMethod.POST)
+	@RequestMapping(value = "query", method = RequestMethod.GET)
 	public @ResponseBody Object query(Long id) {
 		ToolOfficeExcelMapping toolOfficeExcelMapping = toolOfficeExcelMappingService.selectModel(id);
 		return toolOfficeExcelMapping;
+	}
+	
+	@RequestMapping(value = "queryTestCloud", method = RequestMethod.GET)
+	public @ResponseBody Object queryTestCloud() {
+		List<Map<String, Object>> result = testCloudService.queryList("", "", "");
+		return result;
 	}
 
 	public IToolOfficeExcelMappingService getToolOfficeExcelMappingService() {
