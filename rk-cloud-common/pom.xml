@@ -10,27 +10,17 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<artifactId>rk-cloud-userService</artifactId>
+	<artifactId>rk-cloud-common</artifactId>
 	<packaging>jar</packaging>
 
-	<name>rk-cloud-sysService</name>
-	<description>rk-cloud-userService</description>
+	<name>rk-cloud-common</name>
+	<description>rk-cloud-common</description>
 
 	<properties>
 	</properties>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.rk.cloud</groupId>
-			<artifactId>rk-cloud-common</artifactId>
-			<version>${project.parent.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-	</dependencies>
-
 	<build>
 	</build>
+
+
 </project>

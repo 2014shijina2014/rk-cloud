@@ -10,8 +10,8 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.rk.cloud.common.config.AppPropConfigInfo;
 import org.rk.cloud.officeservice.excel.mapping.testcloud.ITestCloudService;
-import org.rk.cloud.officeservice.excel.mapping.testcloud.ITestCloudService2;
 import org.rk.core.common.bean.PageData;
 import org.rk.core.pubServer.controller.BaseController;
 import org.rk.core.tools.office.mapping.ToolOfficeExcelMapping;
@@ -33,8 +33,8 @@ public class ToolOfficeExcelMappingWeb extends BaseController<ToolOfficeExcelMap
 	private IToolOfficeExcelMappingService toolOfficeExcelMappingService;
 	@Autowired
 	private ITestCloudService testCloudService;
-	@Autowired
-	private ITestCloudService2 testCloudService2;
+	//@Autowired
+	//private ITestCloudService2 testCloudService2;
 
 	@RequestMapping(value = "queryPage", method = RequestMethod.POST)
 	public @ResponseBody Object queryList(int start, int length, int draw, String fieldName, String localField, String resourceField) {
@@ -58,14 +58,14 @@ public class ToolOfficeExcelMappingWeb extends BaseController<ToolOfficeExcelMap
 	
 	@RequestMapping(value = "queryTestCloud", method = RequestMethod.GET)
 	public @ResponseBody Object queryTestCloud() {
-		List<Map<String, Object>> result = testCloudService.queryList("", "", "");
+		List<Map<String, Object>> result = testCloudService.queryList(AppPropConfigInfo.getEnv(), AppPropConfigInfo.getAppName(), "");
 		return result;
 	}
-	@RequestMapping(value = "queryTestCloud2", method = RequestMethod.GET)
+	/*@RequestMapping(value = "queryTestCloud2", method = RequestMethod.GET)
 	public @ResponseBody Object queryTestCloud2() {
 		List<Map<String, Object>> result = testCloudService2.queryList("", "");
 		return result;
-	}
+	}*/
 
 	public IToolOfficeExcelMappingService getToolOfficeExcelMappingService() {
 		return toolOfficeExcelMappingService;

@@ -3,7 +3,7 @@
  * caorendao187@163.com
  * 2017年12月30日 下午3:47:06
  */
-package org.rk.cloud.config;
+package org.rk.cloud.common.config;
 
 import java.sql.SQLException;
 
