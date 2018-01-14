@@ -1,7 +1,7 @@
 /**
  * 
  */
-package org.rk.cloud.common.filter.zuulFilter;
+package org.rk.cloud.zuul.filter;
 
 import java.net.URL;
 import java.util.Map;
@@ -45,7 +45,7 @@ public class RateLimitZuulFilter extends ZuulFilter {
 
 	@Override
 	public Object run() {
-		try {
+		/*try {
 			RequestContext context = RequestContext.getCurrentContext();
 			HttpServletResponse response = context.getResponse();
 			String key = null;
@@ -74,7 +74,7 @@ public class RateLimitZuulFilter extends ZuulFilter {
 			}
 		} catch (Exception e) {
 			ReflectionUtils.rethrowRuntimeException(e);
-		}
+		}*/
 		return null;
 	}
 

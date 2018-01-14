@@ -57,7 +57,7 @@
 		</dependency>
 		<dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zuul</artifactId>
+            <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -87,4 +87,15 @@
 		</plugins>
 	</build>
   
+	<modules>
+		<module>../rk-cloud-centralServer</module>
+		<module>../rk-cloud-common</module>
+		
+		<module>../rk-cloud-officeService</module>
+		<module>../rk-cloud-sysService</module>
+		<module>../rk-cloud-userService</module>
+		
+		<module>../rk-cloud-configServer</module>
+		<module>../rk-cloud-zuulServer</module>
+	</modules>
 </project>
