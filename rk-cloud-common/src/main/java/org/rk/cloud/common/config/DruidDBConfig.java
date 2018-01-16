@@ -27,7 +27,7 @@ import com.alibaba.druid.support.http.WebStatFilter;
  * 2017年12月30日
  */
 @Configuration
-public class DruidDBConfig {
+public class DruidDBConfig{
 	private Logger logger = LoggerFactory.getLogger(DruidDBConfig.class);
 
     @Value("${spring.datasource.url}")
