@@ -8,6 +8,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.rk.core.common.bean.JsonMsg;
 import org.rk.core.common.constant.RkConst;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
@@ -15,21 +16,23 @@ import org.springframework.core.Ordered;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.stereotype.Component;
 import org.springframework.util.ReflectionUtils;
 
+import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Maps;
 import com.google.common.util.concurrent.RateLimiter;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
-import com.netflix.zuul.exception.ZuulException;
 
 /**
  * @author 曹仁道（cavion）
  * @email caorendao187@163.com
  * @描述：限流过滤器 2018年1月7日 下午10:44:17
  */
+@Component
 public class RateLimitZuulFilter extends ZuulFilter {
-	private static final String SERVICE_ID_KEY = "";
+	private static final String SERVICE_ID_KEY = "serviceId";
 	private Map<String, RateLimiter> map = Maps.newConcurrentMap();
 	@Autowired
 	private Environment env;
@@ -44,7 +47,8 @@ public class RateLimitZuulFilter extends ZuulFilter {
 
 	@Override
 	public Object run() {
-		/*try {
+		String goalRateLimit = env.getProperty("zull.goalRateLimit", "10");
+		try {
 			RequestContext context = RequestContext.getCurrentContext();
 			HttpServletResponse response = context.getResponse();
 			String key = null;
@@ -52,28 +56,34 @@ public class RateLimitZuulFilter extends ZuulFilter {
 			String serviceId = (String) context.get(SERVICE_ID_KEY);
 			if (serviceId != null) {
 				key = serviceId;
-				map.putIfAbsent(serviceId, RateLimiter.create(10.0));
+				map.putIfAbsent(serviceId, RateLimiter.create(Double.parseDouble(goalRateLimit)));
 			}else {
 				// 对于URL格式的路由，走SimpleHostRoutingFilter
 				URL routeHost = context.getRouteHost();
 				if (routeHost != null) {
 					String url = routeHost.toString();
 					key = url;
-					map.putIfAbsent(url, RateLimiter.create(20.0));
+					map.putIfAbsent(url, RateLimiter.create(Double.parseDouble(goalRateLimit)));
 				}
 			}
 			RateLimiter rateLimiter = map.get(key);
 			if (!rateLimiter.tryAcquire()) {
 				HttpStatus httpStatus = HttpStatus.TOO_MANY_REQUESTS;
-				response.setContentType(MediaType.TEXT_PLAIN_VALUE);
+				JsonMsg jsonmsg = new JsonMsg();
+				jsonmsg.setStatusCode(String.valueOf(httpStatus.value()));
+				jsonmsg.setMsg("命中流控，请求拒绝");
+				
+				response.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
 				response.setStatus(httpStatus.value());
-				response.getWriter().append(httpStatus.getReasonPhrase());
+				response.getWriter().append(JSON.toJSONString(jsonmsg));
+				System.out.println("==========="+httpStatus.getReasonPhrase());
+				context.setResponse(response);
 				context.setSendZuulResponse(false);
-				throw new ZuulException(httpStatus.getReasonPhrase(), httpStatus.value(), httpStatus.getReasonPhrase());
+				//throw new ZuulException(httpStatus.getReasonPhrase(), httpStatus.value(), httpStatus.getReasonPhrase());
 			}
 		} catch (Exception e) {
 			ReflectionUtils.rethrowRuntimeException(e);
-		}*/
+		}
 		return null;
 	}
 
