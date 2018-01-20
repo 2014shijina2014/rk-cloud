@@ -7,7 +7,6 @@
 		<groupId>org.rk.cloud</groupId>
 		<artifactId>rk-cloud-core</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
 	<artifactId>rk-cloud-common</artifactId>

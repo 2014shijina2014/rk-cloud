@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -27,6 +28,7 @@ import com.alibaba.druid.support.http.WebStatFilter;
  * 2017年12月30日
  */
 @Configuration
+@RefreshScope
 public class DruidDBConfig{
 	private Logger logger = LoggerFactory.getLogger(DruidDBConfig.class);
 

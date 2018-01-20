@@ -16,7 +16,7 @@
   <name>rk-cloud-core</name>
   <description>rk-cloud-core</description>
   
-  <properties>
+  	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
@@ -83,19 +83,13 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>**/RkCloudCommonApplication.*</exclude>
+					</excludes>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
   
-	<modules>
-		<module>../rk-cloud-centralServer</module>
-		<module>../rk-cloud-common</module>
-		
-		<module>../rk-cloud-officeService</module>
-		<module>../rk-cloud-sysService</module>
-		<module>../rk-cloud-userService</module>
-		
-		<module>../rk-cloud-configServer</module>
-		<module>../rk-cloud-zuulServer</module>
-	</modules>
 </project>

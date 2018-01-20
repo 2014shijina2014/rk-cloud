@@ -58,14 +58,9 @@ public class ToolOfficeExcelMappingWeb extends BaseController<ToolOfficeExcelMap
 	
 	@RequestMapping(value = "queryTestCloud", method = RequestMethod.GET)
 	public @ResponseBody Object queryTestCloud() {
-		List<Map<String, Object>> result = testCloudService.queryList(AppPropConfigInfo.getEnv(), AppPropConfigInfo.getAppName(), "");
+		List<Map<String, Object>> result = testCloudService.queryList("", "", "");
 		return result;
 	}
-	/*@RequestMapping(value = "queryTestCloud2", method = RequestMethod.GET)
-	public @ResponseBody Object queryTestCloud2() {
-		List<Map<String, Object>> result = testCloudService2.queryList("", "");
-		return result;
-	}*/
 
 	public IToolOfficeExcelMappingService getToolOfficeExcelMappingService() {
 		return toolOfficeExcelMappingService;
