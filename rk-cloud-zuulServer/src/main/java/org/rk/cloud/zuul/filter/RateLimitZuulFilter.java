@@ -29,7 +29,6 @@ import com.netflix.zuul.exception.ZuulException;
  * @描述：限流过滤器 2018年1月7日 下午10:44:17
  */
 public class RateLimitZuulFilter extends ZuulFilter {
-	private static final String STR_NUM_1 = "1";
 	private static final String SERVICE_ID_KEY = "";
 	private Map<String, RateLimiter> map = Maps.newConcurrentMap();
 	@Autowired
@@ -82,7 +81,7 @@ public class RateLimitZuulFilter extends ZuulFilter {
 	public boolean shouldFilter() {
 		// 限流开关控制器
 		String isOpenFilter = env.getProperty("zull.isOpenFilter", "1");
-		if (STR_NUM_1.equals(isOpenFilter) || RkConst.yesno.yes.equals(isOpenFilter)) {
+		if (RkConst.yesno.yes.equals(isOpenFilter)) {
 			return true;
 		}
 		return false;
