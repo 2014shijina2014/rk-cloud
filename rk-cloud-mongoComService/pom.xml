@@ -2,7 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
 	<parent>
 		<groupId>org.rk.cloud</groupId>
 		<artifactId>rk-cloud-core</artifactId>
@@ -10,11 +9,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<artifactId>rk-cloud-zuulServer</artifactId>
+	<artifactId>rk-cloud-mongoComService</artifactId>
 	<packaging>jar</packaging>
 
-	<name>rk-cloud-zuulServer</name>
-	<description>rk-cloud-zuulServer</description>
+	<name>rk-cloud-mongoComService</name>
+	<description>rk-cloud-mongoComService</description>
 
 	<properties>
 	</properties>
@@ -30,23 +29,18 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zuul</artifactId>
-        </dependency>
-        <dependency>
-	        <groupId>org.springframework.cloud</groupId>
-	        <artifactId>spring-cloud-starter-security</artifactId>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-jwt</artifactId>
+			<groupId>org.rk.core</groupId>
+			<artifactId>rk-core-nosql</artifactId>
+			<version>${rk.core.version}</version>
 		</dependency>
-		<dependency>
-	         <groupId>org.springframework.cloud</groupId>
-	         <artifactId>spring-cloud-starter-oauth2</artifactId>
-	 	</dependency>
 	</dependencies>
 
 	<build>
 	</build>
+
+
 </project>

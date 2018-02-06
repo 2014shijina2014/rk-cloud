@@ -52,13 +52,13 @@ public class RateLimitZuulFilter extends ZuulFilter {
 			RequestContext context = RequestContext.getCurrentContext();
 			HttpServletResponse response = context.getResponse();
 			String key = null;
-			// 对于service格式的路由，走RibbonRoutingFilter
+			// 对于service格式的路由
 			String serviceId = (String) context.get(SERVICE_ID_KEY);
 			if (serviceId != null) {
 				key = serviceId;
 				map.putIfAbsent(serviceId, RateLimiter.create(Double.parseDouble(goalRateLimit)));
 			}else {
-				// 对于URL格式的路由，走SimpleHostRoutingFilter
+				// 对于URL格式的路由
 				URL routeHost = context.getRouteHost();
 				if (routeHost != null) {
 					String url = routeHost.toString();

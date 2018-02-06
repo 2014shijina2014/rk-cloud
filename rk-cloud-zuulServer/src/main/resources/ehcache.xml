@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ehcache.xsd">  
+    <diskStore path="java.io.tmpdir"/>  
+<!-- maxElementsInMemory设定内存中创建对象的最大值 -->  
+<!-- eternal设置元素（译注：内存中对象）是否永久驻留。如果是，将忽略超 时限制且元素永不消亡。-->  
+<!-- overflowToDisk设置当内存中缓存达到 maxInMemory 限制时元素是否可写到磁盘上 -->  
+<!-- timeToIdleSeconds设置某个元素消亡前的停顿时间。  也就是在一个元素消亡之前，两次访问时间的最大时间间隔值。  
+             这只能在元素不是永久驻留时有效（译注：如果对象永恒不灭，则 设置该属性也无用）。  
+       如果该值是 0 就意味着元素可以停顿无穷长的时间。                                   
+-->  
+<!-- timeToLiveSeconds为元素设置消亡前的生存时间。 也就是一个元素从构建到消亡的最大时间间隔值。 这只能在元素不是永久驻留时有效。 
+-->  
+<!-- diskPersistent是否disk store在虚拟机启动时持久化。默认为false -->  
+<!-- diskExpiryThreadIntervalSeconds运行disk终结线程的时间，默认为120秒 -->  
+  
+  
+    <defaultCache  
+        maxElementsInMemory="10000"   
+        eternal="false"   
+        overflowToDisk="true"   
+        timeToIdleSeconds="500"   
+        timeToLiveSeconds="1000"   
+        diskPersistent="false"   
+        diskExpiryThreadIntervalSeconds="120"/>   
+          
+    <!-- 登录记录缓存 锁定5分钟 -->
+    <cache name="passwordRetryCache"
+           maxEntriesLocalHeap="20000"
+           eternal="false"
+           timeToIdleSeconds="300"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="false">
+    </cache>
+    <!-- 全局数据缓存 -->
+    <cache name="commonDataCache"
+           maxEntriesLocalHeap="20000"
+           eternal="false"
+           timeToIdleSeconds="300"
+           timeToLiveSeconds="0"
+           overflowToDisk="false"
+           statistics="false">
+    </cache>
+</ehcache>  
