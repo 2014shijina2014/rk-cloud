@@ -6,13 +6,13 @@
 package org.rk.cloud.mongo.pubcms.extField.dao;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 
 import org.rk.cloud.mongo.pubcms.extField.CmsExtFieldInfo;
-import org.rk.core.common.constant.RkDateStyle;
-import org.rk.core.common.util.RKDateUtil;
+import org.rk.core.common.util.RkObjectUtil;
 import org.rk.core.common.util.RkStrUtil;
 import org.rk.core.nosql.mongodb.base.BaseMongoDao;
 import org.springframework.data.mongodb.core.query.Query;
@@ -47,7 +47,6 @@ public class CmsExtFieldInfoDaoImpl extends BaseMongoDao<CmsExtFieldInfo> implem
 		jsonObj.put("pubcmsId", cmsExtFieldInfo.getPubcmsId());
 		jsonObj.put("createTime", cmsExtFieldInfo.getCreateTime());
 		jsonObj.put("updateTime", cmsExtFieldInfo.getUpdateTime());
-		jsonObj.put("id", cmsExtFieldInfo.getId());
 		getMongoTemplate().insert(jsonObj, getCollectionName());
 	}
 	/**
@@ -59,11 +58,17 @@ public class CmsExtFieldInfoDaoImpl extends BaseMongoDao<CmsExtFieldInfo> implem
 		List<CmsExtFieldInfo> cmsExtFieldInfoList = new ArrayList<CmsExtFieldInfo>();
 		for (JSONObject jsonObj : queryResult) {
 			CmsExtFieldInfo cmsExtFieldInfo = new CmsExtFieldInfo();
-			cmsExtFieldInfo.setCreateTime(RKDateUtil.str2Date(jsonObj.getString("createTime"), RkDateStyle.stub_YYYY_MM_DD_HH_MM_SS).getTime());
-			cmsExtFieldInfo.setUpdateTime(RKDateUtil.str2Date(jsonObj.getString("updateTime"), RkDateStyle.stub_YYYY_MM_DD_HH_MM_SS).getTime());
-			cmsExtFieldInfo.setId(jsonObj.getString("id"));
+			Date createTime = jsonObj.getDate("createTime");
+			if(!RkObjectUtil.isEmpty(createTime)) {
+				cmsExtFieldInfo.setCreateTime(createTime.getTime());
+			}
+			Date updateTime = jsonObj.getDate("updateTime");
+			if(!RkObjectUtil.isEmpty(updateTime)) {
+				cmsExtFieldInfo.setUpdateTime(updateTime.getTime());
+			}
 			cmsExtFieldInfo.setFieldInfoToJson(jsonObj);
 			cmsExtFieldInfo.setPubcmsId(jsonObj.getString("pubcmsId"));
+			cmsExtFieldInfo.setId(jsonObj.getString("_id"));
 			cmsExtFieldInfoList.add(cmsExtFieldInfo);
 		}
 		return cmsExtFieldInfoList;

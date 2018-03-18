@@ -14,4 +14,6 @@ import org.rk.core.nosql.mongodb.base.IBaseMongoService;
  */
 public interface ICmsExtFieldInfoService extends IBaseMongoService<CmsExtFieldInfo>{
 
+	CmsExtFieldInfo findByPubcmsId(String pubcmsId);
+
 }
