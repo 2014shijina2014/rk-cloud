@@ -1,4 +1,4 @@
-package org.rk.cloud.pubcms;
+package org.rk.cloud.cmsfield;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,9 +10,9 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 @EnableDiscoveryClient
 @EnableFeignClients
 @EnableCircuitBreaker
-public class RkCloudPubcmsServiceApplication {
+public class RkCloudCmsfieldApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RkCloudPubcmsServiceApplication.class, args);
+		SpringApplication.run(RkCloudCmsfieldApplication.class, args);
 	}
 }
