@@ -1,4 +1,4 @@
-package org.rk.cloud.cmsfield;
+package org.rk.cloud.field;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,9 +10,9 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 @EnableDiscoveryClient
 @EnableFeignClients
 @EnableCircuitBreaker
-public class RkCloudCmsfieldApplication {
+public class RkCloudfieldApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RkCloudCmsfieldApplication.class, args);
+		SpringApplication.run(RkCloudfieldApplication.class, args);
 	}
 }

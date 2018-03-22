@@ -1,9 +1,9 @@
-package org.rk.cloud.cmsfield.programa;
+package org.rk.cloud.field.cms.programa;
 
 import org.rk.core.common.anno.FieldMeta;
 import org.rk.core.common.anno.TableMeta;
 import org.rk.core.common.bean.TreeBean;
-@TableMeta(name = "cms_programa", catalog = "rk_cms_field_manage",desc="")
+@TableMeta(name = "cms_programa", catalog = "rk_field_manage",desc="")
 public class CmsPrograma extends TreeBean{
 
 	private static final long serialVersionUID = 1L;

@@ -1,9 +1,9 @@
-package org.rk.cloud.cmsfield.programa.service;
+package org.rk.cloud.field.cms.programa.service;
 
 import javax.annotation.Resource;
 
-import org.rk.cloud.cmsfield.programa.CmsPrograma;
-import org.rk.cloud.cmsfield.programa.dao.ICmsProgramaDao;
+import org.rk.cloud.field.cms.programa.CmsPrograma;
+import org.rk.cloud.field.cms.programa.dao.ICmsProgramaDao;
 import org.rk.core.common.util.RkStrUtil;
 import org.rk.core.pubServer.service.ModelService;
 import org.springframework.stereotype.Service;

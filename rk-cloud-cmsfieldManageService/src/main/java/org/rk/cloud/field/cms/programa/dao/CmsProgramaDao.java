@@ -1,8 +1,8 @@
-package org.rk.cloud.cmsfield.programa.dao;
+package org.rk.cloud.field.cms.programa.dao;
 
 import javax.annotation.Resource;
 
-import org.rk.cloud.cmsfield.programa.CmsPrograma;
+import org.rk.cloud.field.cms.programa.CmsPrograma;
 import org.rk.core.jdbc.dao.DBDao;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;

@@ -2,7 +2,7 @@
  * @Copyright caorendao187@163.com
  * @author cavion 
  */
-package org.rk.cloud.cmsfield.programa.controller;
+package org.rk.cloud.field.cms.programa.controller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,8 +12,8 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.rk.cloud.cmsfield.programa.CmsPrograma;
-import org.rk.cloud.cmsfield.programa.service.ICmsProgramaService;
+import org.rk.cloud.field.cms.programa.CmsPrograma;
+import org.rk.cloud.field.cms.programa.service.ICmsProgramaService;
 import org.rk.core.common.anno.docAnno.ApiDocAnno;
 import org.rk.core.common.anno.docAnno.DocType;
 import org.rk.core.common.bean.OrderBean;
@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @ApiDocAnno(name="CmsProgramaWeb",desc="开放端栏目分类", docType = DocType.TYPE)
 @RestController
-@RequestMapping("/rk/web/cms/fieldmanage/programa/")
+@RequestMapping("/rk/web/field/cms/programa/")
 public class CmsProgramaWeb extends BaseController<CmsPrograma> {
 
 	@Resource(name = "CmsProgramaService")

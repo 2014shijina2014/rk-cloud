@@ -8,11 +8,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	
-	<artifactId>rk-cloud-pubcmsService</artifactId>
+	<artifactId>rk-cloud-fieldManageService</artifactId>
 	<packaging>jar</packaging>
 
-	<name>rk-cloud-pubcmsService</name>
-	<description>rk-cloud-pubcmsService</description>
+	<name>rk-cloud-fieldManageService</name>
+	<description>rk-cloud-fieldManageService</description>
 
 	<properties>
 	</properties>
