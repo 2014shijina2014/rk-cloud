@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>仁科之家|用户信息</title>
+<!-- start: META -->
+<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta content="" name="description" />
+<meta content="cavion" name="author" />
+<!-- end: META -->
+
+<script data-main="userInfo.list" src="/static/lib/require/require.js"></script>
+<script type="text/javascript" src="/static/js/config.js"></script>
+</head>
+
+<body>
+	<div class="box">
+		<div class="box-header">
+			<form class="form-inline well" id="searchForm">
+				<div class="form-group">
+					<label class="control-label">用户名</label>
+					<input class="form-control" type="text" name="keyName"/>
+				</div>
+				<button type="button" class="btn btn-info pull-right" id="searchBtn">查询</button>
+			</form>
+		</div>
+		<div class="box-content" id="tableDiv">
+			<rk-btn groupClass="pull-right"></rk-btn>
+			<table id="userInfoList" class="table table-striped table-bordered bootstrap-datatable display">
+		    <thead>
+		    <tr>
+		    	<th style="min-width: 1%;" dataField="id"><input type="checkbox" id="all-checkbox"/></th>
+			    <th style="min-width: 10%;" dataField="userName">用户名</th>
+				<th style="min-width: 10%;" dataField="email">用户邮箱</th>
+				<th style="min-width: 10%;" dataField="userType"  dataRender="renderUserType">用户类型</th>
+				<th style="min-width: 8%;" dataField="isActive" dataRender="rkTableObj.tableRender.renderYesNo">是否激活</th>
+				<th style="min-width: 10%;" dataField="registerTime">注册时间</th>
+		    </tr>
+		    </thead>
+		    <tbody>
+		    </tbody>
+		    </table>
+		</div>
+	</div>
+</body>
+</html>

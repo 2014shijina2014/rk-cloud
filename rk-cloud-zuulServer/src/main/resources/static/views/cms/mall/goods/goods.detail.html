@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>仁科之家|商品详细信息</title>
+<!-- start: META -->
+<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta content="" name="description" />
+<meta content="cavion" name="author" />
+<!-- end: META -->
+
+<script data-main="goods.detail" src="/static/lib/require/require.js"></script>
+<script type="text/javascript" src="/static/js/config.js"></script>
+</head>
+
+<body>
+	<div class="container-ch">
+		<div class="row">
+			<div class="col-md-9">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+			    		<h3 class="panel-title">商品信息</h3>
+			  		</div>
+				  	<div class="panel-body" style="min-height: 400px;">
+				    	<form class="form-inline" id="goodsForm">
+				    		<input type="hidden" id="id" name="id" />
+				    		<input type="hidden" id="thumbnail" name="thumbnail" />
+				    		<input type="hidden" id="programaCode" name="programaCode" />
+				    		<rk-input type="text" name="title" width="800px" label="商品标题"></rk-input>
+				    		<rk-textarea cols="50" rows="3" name="summary" label="商品卖点"></rk-textarea>
+				    		<rk-textarea cols="50" rows="3" name="metaKeywords" label="SEO关键字"></rk-textarea>
+				    		<rk-textarea cols="50" rows="3" name="metaDescription" label="SEO描述"></rk-textarea>
+							<rk-textarea name="content" label="" render="all"></rk-textarea>
+						</form>
+				  	</div>
+				</div>
+				<div class="panel panel-primary" id="goodsOtherProPanel">
+					<div class="panel-heading"><h3 class="panel-title">商品属性/参数</h3></div>
+				  	<div class="panel-body">
+				    	<form class="form-inline" id="goodsOtherProForm">
+				    	</form>
+				  	</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="panel panel-info">
+					<div class="panel-heading" id="goodsBtn"></div>
+				</div>
+				<div class="panel panel-primary">
+					<div class="panel-heading"><h3 class="panel-title">分类选择</h3></div>
+					<div class="panel-body ztree" id="goodsProgramaTree"></div>
+				</div>
+				<div class="panel panel-info">
+					<div class="panel-body" id="goodsInfoPanel">
+						<form class="form-inline" id="goodsInfoForm">
+							<input type="hidden" name="id" id="id"/>
+							<input type="hidden" name="status" id="status"/>
+							<input type="hidden" name="pubContentId" id="pubContentId"/>
+							<rk-input type="text" name="goodNum" labelWidth="100px" width="150px" label="货号"></rk-input>
+							<rk-input type="number" name="priceMoney" labelWidth="100px" width="150px" label="原价(元)"></rk-input>
+							<rk-input type="number" name="fixedPrice" labelWidth="100px" width="150px" label="一口价"></rk-input>
+							<rk-input type="number" name="creditRate" labelWidth="100px" width="150px" label="积分抵扣比例"></rk-input>
+							<rk-input type="number" name="inventoryNum" labelWidth="100px" width="150px" label="库存量"></rk-input>
+							<rk-select field="tradeType" dicCode="SPJYLXM" labelWidth="100px" width="150px" label="交易类型"></rk-select>
+							<rk-select field="payType" dicCode="ZFFSM" labelWidth="100px" width="150px" label="支付方式"></rk-select>
+							<rk-select field="freightPaier" dicCode="WLCDRM" labelWidth="100px" width="150px" label="物流承担者"></rk-select>
+							<rk-select field="reduceStoreMethod" dicCode="JSSPKCFSM" labelWidth="100px" width="150px" label="减少库存方式"></rk-select>
+							<rk-select field="isInvoice" dicCode="SF" labelWidth="100px" width="150px" label="是否提供发票"></rk-select>
+							
+							<rk-input type="number" name="volume" labelWidth="100px" width="150px" label="体积(立方米)"></rk-input>
+							<rk-input type="number" name="weight" labelWidth="100px" width="150px" label="重量（千克）"></rk-input>
+							<rk-textarea cols="50" rows="3" name="afterSale" label="售后说明"></rk-textarea>
+						</form>
+					</div>
+				</div>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">缩略图</h3>
+					</div>
+					<div class="panel-body" id="thumbnailPanel">
+						<a style='cursor: pointer;' class='thumbnail'><img id="thumbnailImg" alt="" src="" ></a>
+						<button type="button" class="btn btn-info" id="uploadThumbBtn">选择图片</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>仁科之家|运费模版维护</title>
+<!-- start: META -->
+<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta content="" name="description" />
+<meta content="cavion" name="author" />
+<!-- end: META -->
+
+<script data-main="freight.list" src="/static/lib/require/require.js"></script>
+<script type="text/javascript" src="/static/js/config.js"></script>
+</head>
+
+<body>
+	<div class="box">
+		<div class="box-header">
+			<form class="form-inline well" id="searchForm">
+				<rk-input type="text" name="name" label="模版名称"></rk-input>
+				<button type="button" class="btn btn-info pull-right" id="searchBtn">查询</button>
+			</form>
+		</div>
+		<div class="box-content" >
+			<div class="rows" id="mallFreightTemplateTableDiv">
+				<rk-btn groupClass="pull-right"></rk-btn>
+				<table id="mallFreightTemplateList" class="table table-striped table-bordered bootstrap-datatable display">
+					<thead>
+						<tr>
+							<th style="min-width: 1%;" dataField="id"><input type="checkbox" id="all-checkbox" /></th>
+							<th style="min-width: 10%;" dataField="name">模版名称</th>
+							<th style="min-width: 10%;" dataField="packOff" dataRender="renderPackOff">发货时间</th>
+							<th style="min-width: 15%;" dataField="valuation" dataRender="renderValuation">计价方式</th>
+							<th style="min-width: 15%;" dataField="freightMethod" dataRender="renderFreightMethod">运送方式</th>
+							<th style="min-width: 20%;" dataField="remark">备注说明</th>
+							<th style="min-width: 8%;" dataField="enabled" dataRender="rkTableObj.tableRender.renderEnabled">是否启用</th>
+							<th style="min-width: 10%;" dataField="creator">创建人</th>
+							<th style="min-width: 10%;" dataField="createTime">创建时间</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+			<div class="rows" id="mallFreightPriceTableDiv" style="display: none;">
+				<rk-btn groupClass="pull-right"></rk-btn>
+				<table id="mallFreightPriceList" class="table table-striped table-bordered bootstrap-datatable">
+					<thead>
+						<tr>
+							<th style="min-width: 1%;" dataField="id"><input type="checkbox" id="all-checkbox" /></th>
+							<th style="min-width: 20%;" dataField="area">区域</th>
+							<th style="min-width: 10%;" dataField="initPrice">首运费</th>
+							<th style="min-width: 10%;" dataField="initScope">首运费计量条件</th>
+							<th style="min-width: 15%;" dataField="perPrice">单位计量运费</th>
+							<th style="min-width: 15%;" dataField="perValuation">单位计量数</th>
+							<th style="min-width: 8%;" dataField="isDefault" dataRender="rkTableObj.tableRender.renderEnabled">是否默认</th>
+							<th style="min-width: 8%;" dataField="enabled" dataRender="rkTableObj.tableRender.renderEnabled">是否启用</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

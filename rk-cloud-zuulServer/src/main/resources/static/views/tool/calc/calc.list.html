@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>仁科之家|计数器</title>
+<!-- start: META -->
+<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta content="" name="description" />
+<meta content="cavion" name="author" />
+<!-- end: META -->
+
+<script data-main="calc.list" src="/static/lib/require/require.js"></script>
+<script type="text/javascript" src="/static/js/config.js"></script>
+</head>
+
+<body>
+	<div class="box">
+		<div class="box-header">
+			<form class="form-inline well" id="searchForm">
+				<div class="form-group">
+					<label class="control-label">期数</label>
+					<input class="form-control" type="text" name="periodsNum"/>
+				</div>
+				<button type="button" class="btn btn-info pull-right" id="searchBtn">查询</button>
+			</form>
+		</div>
+		<div class="box-content" id="tableDiv">
+			<rk-btn groupClass="pull-right"></rk-btn>
+			<table id="calcList" class="table table-striped table-bordered bootstrap-datatable display">
+		    <thead>
+		    <tr>
+		    	<th style="min-width: 1%;" dataField="id"><input type="checkbox" id="all-checkbox"/></th>
+			    <th style="min-width: 10%;" dataField="permCode">权限代码</th>
+				<th style="min-width: 20%;" dataField="permName">权限名称</th>
+				<th style="min-width: 10%;" dataField="type" dataRender="renderType">权限类型</th>
+				<th style="min-width: 15%;" dataField="permUrl">url</th>
+				<th style="min-width: 10%;" dataField="enabled" dataRender="renderEnabled">是否启用</th>
+				<th style="min-width: 10%;" dataField="creator">创建人</th>
+				<th style="min-width: 15%;" dataField="createTime">创建时间</th>
+		    </tr>
+		    </thead>
+		    <tbody>
+		    </tbody>
+		    </table>
+		</div>
+	</div>
+</body>
+</html>

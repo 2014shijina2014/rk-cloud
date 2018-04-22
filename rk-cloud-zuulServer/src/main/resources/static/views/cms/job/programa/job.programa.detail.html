@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>仁科之家|行业管理</title>
+<!-- start: META -->
+<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta content="" name="description" />
+<meta content="cavion" name="author" />
+<!-- end: META -->
+
+<script data-main="job.programa.detail" src="/static/lib/require/require.js"></script>
+<script type="text/javascript" src="/static/js/config.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default" style="min-height: 400px;">
+		<div class="panel-heading">
+    		<h3 class="panel-title">行业信息</h3>
+  		</div>
+	  	<div class="panel-body">
+	    	<form class="form-inline" id="programaForm">
+	    		<input type="hidden" name="id" id="id"/>
+	    		<input type="hidden" name="fatherCode" id="fatherCode"/>
+	    		<rk-input type="text" name="name" label="行业名称"></rk-input>
+				<rk-input type="text" name="slug" label="slug" disabled="disabled"></rk-input>
+				<rk-input type="text" name="icon" label="图标"></rk-input>
+				<rk-input type="number" name="orderNum" label="排序号"></rk-input>
+				<rk-select field="enabled" dicCode="SF" label="是否启用"></rk-select>
+				<rk-textarea rows="3" cols="100" name="description" render="false" label="分类描述"></rk-textarea>
+				<rk-textarea rows="3" cols="100" name="metaKeywords" render="false" label="SEO关键字"></rk-textarea>
+				<rk-textarea rows="3" cols="100" name="metaDescription" render="false" label="SEO描述信息"></rk-textarea>
+				<rk-textarea rows="3" cols="100" name="remark" render="false" label="备注"></rk-textarea>
+			</form>
+	  	</div>
+	  	<div class="panel-footer" id="programaBtn">
+	  	</div>
+	</div>
+</body>
+</html>

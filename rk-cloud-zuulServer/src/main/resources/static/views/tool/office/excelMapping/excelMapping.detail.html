@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>仁科之家|系统参数详细信息</title>
+<!-- start: META -->
+<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta content="" name="description" />
+<meta content="cavion" name="author" />
+<!-- end: META -->
+
+<script data-main="excelMapping.detail" src="/static/lib/require/require.js"></script>
+<script type="text/javascript" src="/static/js/config.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default" style="min-height: 400px;">
+		<div class="panel-heading">
+    		<h3 class="panel-title">excel导入导出映射</h3>
+  		</div>
+	  	<div class="panel-body">
+	    	<form class="form-inline" id="excelMappingForm">
+	    		<input type="hidden" name="id" id="id"/>
+	    		<rk-input type="text" name="tableName" label="表名"></rk-input>
+	    		<rk-input type="text" name="beanName" label="实体bean"></rk-input>
+	    		<rk-input type="text" name="fieldName" label="字段名称"></rk-input>
+	    		<rk-input type="text" name="localField" label="本库字段"></rk-input>
+	    		<rk-input type="text" name="resourceField" label="excel字段"></rk-input>
+				<rk-select field="opraType" dicCode="EXCELMAPPINGM" label="业务类型"></rk-select>
+				<rk-select field="imOrEx" dicCode="DRHDCM" label="导入或导出"></rk-select>
+				<rk-select field="isMust" dicCode="SF" label="是否必须"></rk-select>
+				<rk-select field="enabled" dicCode="SF" label="是否启用"></rk-select>
+			</form>
+	  	</div>
+	  	<div class="panel-footer" id="excelMappingBtn">
+	  	</div>
+	</div>
+</body>
+</html>

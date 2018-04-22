@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>仁科之家|区域运费维护</title>
+<!-- start: META -->
+<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta content="" name="description" />
+<meta content="cavion" name="author" />
+<!-- end: META -->
+
+<script data-main="freight.price.detail" src="/static/lib/require/require.js"></script>
+<script type="text/javascript" src="/static/js/config.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+    		<h3 class="panel-title">区域运费信息</h3>
+  		</div>
+	  	<div class="panel-body">
+	    	<form class="form-inline" id="mallFreightPriceForm">
+	    		<input type="hidden" name="id" id="id"/>
+	    		<input type="hidden" name="freightTplId" id="freightTplId"/>
+	    		<input type="hidden" name="area" id="area"/>
+	    		<div class="form-group" id="province_div"></div>
+				<div class="form-group" id="state_div" style="display: none;"></div>
+				<div class="form-group" id="prefecture_div" style="display: none;"></div>
+	    		<rk-input type="text" name="initPrice" label="首运费"></rk-input>
+	    		<rk-input type="text" name="initScope" label="首运费计费条件(千克/立方米/件)"></rk-input>
+	    		<rk-input type="text" name="perPrice" label="单位计量运费"></rk-input>
+	    		<rk-input type="text" name="perValuation" label="单位计量数(千克/立方米/件)"></rk-input>
+	    		<rk-select field="isDefault" dicCode="SF" label="是否默认"></rk-select>
+				<rk-select field="enabled" dicCode="SF" label="是否启用"></rk-select>
+				<rk-textarea cols="50" rows="3" name="remark" label="备注"></rk-textarea>
+			</form>
+	  	</div>
+	  	<div class="panel-footer" id="mallFreightPriceBtn">
+	  	</div>
+	</div>
+</body>
+</html>

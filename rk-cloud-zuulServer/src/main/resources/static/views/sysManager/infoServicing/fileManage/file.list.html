@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>仁科之家|图片列表</title>
+<!-- start: META -->
+<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta content="" name="description" />
+<meta content="cavion" name="author" />
+<!-- end: META -->
+
+<script data-main="file.list" src="/static/lib/require/require.js"></script>
+<script type="text/javascript" src="/static/js/config.js"></script>
+</head>
+
+<body>
+	<div class="box">
+		<div class="box-header">
+			<form class="form-inline well" id="searchForm">
+				<rk-select field="simpleType" dicCode="WJLXM" label="文件类型"></rk-select>
+				<button type="button" class="btn btn-info pull-right" id="uploadFile">上传新文件</button>
+				<button type="button" class="btn btn-success pull-right" id="searchBtn">查询</button>
+			</form>
+		</div>
+		<div class="box-content">
+			<div class="container-fluid">
+				<div class="grid" id="imageListDiv">
+				</div>
+			</div>
+			<nav>
+			  <ul class="pagination" id="imagePagination">
+			   <!--  <li class="disabled"><a href="#">&laquo;</a></li>
+			    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li> -->
+			  </ul>
+			</nav>
+		</div>
+	</div>
+</body>
+</html>

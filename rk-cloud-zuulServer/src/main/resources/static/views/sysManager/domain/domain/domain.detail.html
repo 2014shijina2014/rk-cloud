@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>仁科之家|站点详细信息</title>
+<!-- start: META -->
+<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta content="" name="description" />
+<meta content="cavion" name="author" />
+<!-- end: META -->
+
+<script data-main="domain.detail" src="/static/lib/require/require.js"></script>
+<script type="text/javascript" src="/static/js/config.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+    		<h3 class="panel-title">站点信息</h3>
+  		</div>
+	  	<div class="panel-body">
+	    	<form class="form-inline" id="domainForm">
+	    		<input type="hidden" name="id" id="id"/>
+	    		<rk-input type="text" name="domainName" label="站点域名"></rk-input>
+	    		<rk-input type="text" name="name" label="站点名称"></rk-input>
+	    		<rk-input type="text" name="keywords" label="关键字"></rk-input>
+	    		<rk-input type="text" name="description" label="站点描述"></rk-input>
+	    		<rk-input type="text" name="copyright" label="版权归属"></rk-input>
+				<rk-select field="showSupport" dicCode="SF" label="是否显示技术支持"></rk-select>
+				<rk-select field="isvalid" dicCode="SF" label="是否有效"></rk-select>
+				<rk-textarea cols="50" rows="3" name="bottomScript" label="页底统计脚本"></rk-textarea>
+			</form>
+	  	</div>
+	  	<div class="panel-footer" id="domainBtn">
+	  	</div>
+	</div>
+</body>
+</html>

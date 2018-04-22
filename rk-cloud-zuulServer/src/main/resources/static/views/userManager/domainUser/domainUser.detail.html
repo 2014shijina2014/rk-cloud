@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>仁科之家|用户信息管理</title>
+<!-- start: META -->
+<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta content="" name="description" />
+<meta content="cavion" name="author" />
+<!-- end: META -->
+
+<script data-main="userInfo.detail" src="/static/lib/require/require.js"></script>
+<script type="text/javascript" src="/static/js/config.js"></script>
+</head>
+
+<body>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+    		<h3 class="panel-title">用户信息</h3>
+  		</div>
+	  	<div class="panel-body">
+	    	<form class="form-inline" id="userInfoForm">
+	    		<input type="hidden" name="id" id="id"/>
+	    		<rk-input type="text" name="userName" label="用户名"/>
+	    		<rk-input type="text" name="email" label="email"/>
+	    		<rk-input type="text" name="mobilephone" label="手机号"/>
+	    		<rk-select field="userType" dicCode="YHLXM" label="用户类型"></rk-select>
+	    		<rk-select field="isActive" dicCode="SF" label="是否激活"></rk-select>
+				<hr>
+			</form>
+			<!-- <hr>
+			<form class="form-inline" id="userInfoForm">
+	    		<input type="hidden" name="userId" id="userId"/>
+			</form> -->
+	  	</div>
+	  	<div class="panel-footer" id="userInfoBtn">
+	  	</div>
+	</div>
+</body>
+</html>

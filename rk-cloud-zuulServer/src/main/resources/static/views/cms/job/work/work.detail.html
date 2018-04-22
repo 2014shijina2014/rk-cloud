@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>仁科之家|工作详细信息</title>
+<!-- start: META -->
+<!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta content="" name="description" />
+<meta content="cavion" name="author" />
+<!-- end: META -->
+
+<script data-main="work.detail" src="/static/lib/require/require.js"></script>
+<script type="text/javascript" src="/static/js/config.js"></script>
+</head>
+
+<body>
+	<div class="container-ch">
+		<div class="row">
+			<div class="col-md-9">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+			    		<h3 class="panel-title">工作信息</h3>
+			  		</div>
+				  	<div class="panel-body" style="min-height: 400px;">
+				    	<form class="form-inline" id="workContentForm">
+				    		<input type="hidden" id="id" name="id" />
+				    		<input type="hidden" id="thumbnail" name="thumbnail" />
+				    		<input type="hidden" id="programaCode" name="programaCode" />
+				    		<rk-input type="text" name="title" width="800px" label="工作标题"></rk-input>
+				    		<rk-textarea cols="50" rows="3" name="summary" label="工作简介"></rk-textarea>
+				    		<rk-textarea cols="50" rows="3" name="metaKeywords" label="SEO关键字"></rk-textarea>
+				    		<rk-textarea cols="50" rows="3" name="metaDescription" label="SEO描述"></rk-textarea>
+							<rk-textarea name="content" label="工作描述" render="all"></rk-textarea>
+						</form>
+				  	</div>
+				</div>
+				<div class="panel panel-primary" id="workFormPanel">
+					<div class="panel-heading"><h3 class="panel-title">工作信息</h3></div>
+				  	<div class="panel-body">
+				    	<form class="form-inline" id="workForm">
+				    		<input type="hidden" name="id" id="id"/>
+				    		<input type="hidden" name="pubContentId" id="pubContentId"/>
+				    		<input type="hidden" name="unitId" id="unitId"/>
+				    		<input type="hidden" name="positionCode" id="positionCode"/>
+				    		<input type="hidden" name="status" id="status"/>
+				    		<rk-select field="workType" dicCode="GZLXM" label="工作类型"></rk-select>
+				    		<rk-select field="welfare" dicCode="GZFLLXM" label="福利类型"></rk-select>
+				    		<rk-select field="graduation" dicCode="GZXLLXM" label="学历要求"></rk-select>
+				    		<rk-select field=workYear dicCode="GZNXM" label="工作年限"></rk-select>
+				    		<rk-select field=emolument dicCode="GZXCLXM" label="薪酬范围"></rk-select>
+				    		<rk-select field="enabled" dicCode="SF" label="是否启用"></rk-select>
+				    		<hr>
+				    		<input type="hidden" name="area" id="area"/>
+				    		<div class="form-group" id="province_div"></div>
+							<div class="form-group" id="state_div" style="display: none;"></div>
+							<div class="form-group" id="prefecture_div" style="display: none;"></div>
+				    	</form>
+				  	</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="panel panel-info">
+					<div class="panel-heading" id="workBtn"></div>
+				</div>
+				<div class="panel panel-primary">
+					<div class="panel-heading"><h3 class="panel-title">行业选择</h3></div>
+					<div class="panel-body ztree" id="workProgramaTree"></div>
+				</div>
+				<div class="panel panel-info">
+					<div class="panel-heading"><h3 class="panel-title">职位选择</h3></div>
+					<div class="panel-body" id="workPositionChoose"></div>
+				</div>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">缩略图</h3>
+					</div>
+					<div class="panel-body" id="thumbnailPanel">
+						<a style='cursor: pointer;' class='thumbnail'><img id="thumbnailImg" alt="" src="" ></a>
+						<button type="button" class="btn btn-info" id="uploadThumbBtn">选择图片</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
