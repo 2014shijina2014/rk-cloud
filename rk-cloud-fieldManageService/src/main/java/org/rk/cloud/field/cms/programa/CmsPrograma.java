@@ -16,6 +16,8 @@ public class CmsPrograma extends TreeBean{
 	private String slug;
 	@FieldMeta(name="icon",length=200,desc="图标",defaultValue="")
 	private String icon;
+	@FieldMeta(name="enName",length=200,desc="英文名称",defaultValue="")
+	private String enName;
 	@FieldMeta(name="orderNum",length=10,desc="排序号",defaultValue="")
 	private int orderNum;
 	@FieldMeta(name="metaKeywords",length=256,desc="SEO关键字",defaultValue="")

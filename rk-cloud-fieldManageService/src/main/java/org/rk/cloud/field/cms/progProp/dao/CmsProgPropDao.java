@@ -70,11 +70,11 @@ public class CmsProgPropDao extends DBDao<CmsProgProp> implements ICmsProgPropDa
 	}
 	private StringBuffer genJoinSqlAndParam(Map<String,Object> mapObjs,List<ParamMap> paramMapList){
 		StringBuffer sb=new StringBuffer();
-		sb.append("SELECT mpp.id,mpp.programaCode,mpp.propertyCode,mpp.enabled,mpp.remark,mpp.createTime,mpp.creator,");
-		sb.append(" pp.name as programaName ,pp.orderNum as programaOrderNum ,mp.name as propertyName ,mp.enName as propertyEnName");
-		sb.append(" FROM  cms_mall_prog_prop mpp  ");
-		sb.append(" INNER JOIN cms_pub_programa pp ON pp.code=mpp.programaCode  ");
-		sb.append(" INNER JOIN cms_mall_property mp ON mp.code=mpp.propertyCode  ");
+		sb.append("SELECT mpp.id,mpp.programaCode,mpp.propertyCode,mpp.enabled,mpp.remark,mpp.createTime,mpp.creator,mpp.orderNum,mpp.isMust,");
+		sb.append(" pp.name as programaName ,pp.enName as programaEnName ,mp.name as propertyName ,mp.enName as propertyEnName");
+		sb.append(" FROM  cms_prog_prop mpp  ");
+		sb.append(" INNER JOIN cms_programa pp ON pp.code=mpp.programaCode  ");
+		sb.append(" INNER JOIN cms_property mp ON mp.code=mpp.propertyCode  ");
 		sb.append(" where 1=1 and pp.enabled='"+RkConst.yesno.yes+"' ");
 		for(Map.Entry<String, Object> entry :mapObjs.entrySet()){
 			String condiSql="";
