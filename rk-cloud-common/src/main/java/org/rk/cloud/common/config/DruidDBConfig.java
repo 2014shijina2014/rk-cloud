@@ -30,7 +30,7 @@ import com.alibaba.druid.support.http.WebStatFilter;
  */
 @Configuration
 @RefreshScope
-@Order(100)
+@Order(1)
 public class DruidDBConfig{
 	private Logger logger = LoggerFactory.getLogger(DruidDBConfig.class);
 
