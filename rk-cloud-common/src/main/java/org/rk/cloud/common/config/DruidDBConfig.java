@@ -30,7 +30,7 @@ import com.alibaba.druid.support.http.WebStatFilter;
  */
 @Configuration
 @RefreshScope
-@Order(1)
+@Order(100)
 public class DruidDBConfig{
 	private Logger logger = LoggerFactory.getLogger(DruidDBConfig.class);
 
@@ -103,7 +103,7 @@ public class DruidDBConfig{
         return filterRegistrationBean;
     }
 
-    @Bean
+    @Bean(destroyMethod="close")
     public DataSource druidDataSource() {
         DruidDataSource datasource = new DruidDataSource();
         datasource.setUrl(dbUrl);
