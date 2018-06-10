@@ -11,9 +11,9 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.rk.cloud.userservice.module.service.ICoreModuleService;
 import org.rk.core.common.bean.PageData;
 import org.rk.core.domain.module.CoreModule;
-import org.rk.core.domain.service.ICoreModuleService;
 import org.rk.core.pubServer.controller.BaseController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

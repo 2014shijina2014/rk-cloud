@@ -10,9 +10,9 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.rk.cloud.userservice.adminMenu.service.ICoreAdminMenuService;
 import org.rk.core.common.util.RkObjectUtil;
 import org.rk.core.domain.menu.CoreAdminMenu;
-import org.rk.core.domain.service.ICoreAdminMenuService;
 import org.rk.core.pubServer.controller.BaseController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

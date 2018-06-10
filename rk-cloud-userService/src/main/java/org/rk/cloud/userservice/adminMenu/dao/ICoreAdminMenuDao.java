@@ -3,6 +3,8 @@
  */
 package org.rk.cloud.userservice.adminMenu.dao;
 
+import java.util.List;
+
 import org.rk.core.domain.menu.CoreAdminMenu;
 import org.rk.core.jdbc.dao.IDBDao;
 
@@ -14,5 +16,7 @@ import org.rk.core.jdbc.dao.IDBDao;
 public interface ICoreAdminMenuDao extends IDBDao<CoreAdminMenu> {
 
 	boolean deleteById(Long id);
+
+	List<CoreAdminMenu> queryForListByPermIds(List<Long> permIdList);
 
 }

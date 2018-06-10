@@ -6,8 +6,8 @@ package org.rk.cloud.userservice.user.userRole.controller;
 
 import javax.annotation.Resource;
 
+import org.rk.cloud.userservice.user.userRole.service.ICoreUserRoleService;
 import org.rk.core.pubServer.controller.BaseController;
-import org.rk.core.user.service.ICoreUserRoleService;
 import org.rk.core.user.userRole.CoreUserRole;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

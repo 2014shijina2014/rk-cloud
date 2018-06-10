@@ -8,7 +8,7 @@ require(['jquery','bootstrap',rkjsPath+'rkUtil.js',rkjsPath+'rkStore.js',rkjsPat
 	var btns=rkTags.btn.saveCloseBtn("domainParamBtn", false, 
 	function(){
 		//保存
-		rkFormUtil.submitForm("domainParamForm", "/rk/admin/core/domain/domainParam/save", function(data){
+		rkFormUtil.submitForm("domainParamForm", "/userservice/rk/admin/core/domain/domainParam/save", function(data){
 			rkAlert.succAlertMsg(data.msg);
 			//关闭窗口
 			parent.closeWin(true);

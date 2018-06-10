@@ -10,7 +10,6 @@ import org.rk.cloud.userservice.user.userRole.dao.ICoreUserRoleDao;
 import org.rk.core.common.util.RKAlert;
 import org.rk.core.jdbc.dao.util.ParamMap;
 import org.rk.core.pubServer.service.ModelService;
-import org.rk.core.user.service.ICoreUserRoleService;
 import org.rk.core.user.userRole.CoreUserRole;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,9 +30,9 @@ public class CoreUserRoleService extends ModelService<CoreUserRole> implements I
 	}
 	@Transactional
 	@Override
-	public List<CoreUserRole> selectByUserId(long userId){
+	public List<CoreUserRole> selectByUserNum(String userNum){
 		List<ParamMap> paramMapList=new ArrayList<ParamMap>();
-		ParamMap pm=new ParamMap("userId", userId);
+		ParamMap pm=new ParamMap("userNum", userNum);
 		paramMapList.add(pm);
 		try {
 			return modelDao.queryForList(getPojoClass(), paramMapList);

@@ -8,7 +8,8 @@ define(['jquery',rkjsPath+'rkUtil.js',rkjsPath+'rkAlert.sweet.js'], function($,r
 			status302:"302",
 			status400:"400",
 			status500:"500",
-			status404:"404"
+			status404:"404",
+			status429:"429"
 	}
 	var ajax=function(url,type,dataType,param,isNoDataTip,fnBack,errFnBack){
 		$.ajax({
@@ -43,6 +44,20 @@ define(['jquery',rkjsPath+'rkUtil.js',rkjsPath+'rkAlert.sweet.js'], function($,r
 		    	//如果发生了错误，错误信息（第二个参数）除了得到 null 之外，还可能是 "timeout", "error", "notmodified" 和 "parsererror"
 		    	console.log(XHR);
 		    	var respText=XHR.responseText;
+		    	var respJson = XHR.responseJSON;
+		    	if(!rkUtil.rkStrUtil.isNull(respJson)){
+		    		//请求超时
+		    		if(respJson.status == "500" && respJson.message == "TIMEOUT"){
+		    			rkAlert.errAlertMsg("请求超时，请重试！");
+		    			setTimeout(function(){location.herf="/views/login/login_signin.html";},2000);
+		    			return;
+		    		}
+		    		//命中流控
+		    		if(respJson.statusCode==ajaxStatusCode.status429){
+		    			rkAlert.errAlertMsg(respJson.msg);
+		    			return;
+		    		}
+		    	}
 		    	console.log(respText);
 		    	if(!rkUtil.rkStrUtil.isNull(respText)){
 		    		if(respText.indexOf("statusCode:'302'")>0&&respText.indexOf("msg:'login'")>0){

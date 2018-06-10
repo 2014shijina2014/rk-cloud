@@ -5,7 +5,6 @@ import javax.annotation.Resource;
 import org.rk.cloud.userservice.user.role.dao.ICoreRoleDao;
 import org.rk.core.common.util.RkStrUtil;
 import org.rk.core.pubServer.service.ModelService;
-import org.rk.core.user.service.ICoreRoleService;
 import org.rk.core.user.userRole.CoreRole;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

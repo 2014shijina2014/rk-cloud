@@ -1,15 +1,16 @@
 package org.rk.cloud.userservice.module.service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.annotation.Resource;
 
 import org.rk.cloud.userservice.module.dao.ICoreModuleDao;
 import org.rk.core.common.util.RKAssert;
+import org.rk.core.common.util.RkObjectUtil;
 import org.rk.core.common.util.RkStrUtil;
 import org.rk.core.domain.module.CoreModule;
-import org.rk.core.domain.service.ICoreModuleService;
 import org.rk.core.jdbc.dao.util.ParamMap;
 import org.rk.core.pubServer.service.ModelService;
 import org.springframework.stereotype.Service;
@@ -44,6 +45,15 @@ public class CoreModuleService extends ModelService<CoreModule> implements ICore
 			e.printStackTrace();
 		}
 		return null;
+	}
+	@Override
+	@Transactional(readOnly=true)
+	public List<CoreModule> selectByListByModuleCodes(List<String> moduleCodeList){
+		List<CoreModule> result=modelDao.queryForListByModuleCodes(moduleCodeList);
+		if(!RkObjectUtil.isEmpty(result)){
+			return result;
+		}
+		return Collections.emptyList();
 	}
 	@Transactional
 	@Override

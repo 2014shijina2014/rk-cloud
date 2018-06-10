@@ -1,6 +1,7 @@
 package org.rk.cloud.userservice.adminMenu.service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -8,15 +9,14 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 import org.rk.cloud.userservice.adminMenu.dao.ICoreAdminMenuDao;
+import org.rk.cloud.userservice.user.permission.service.ICorePermService;
 import org.rk.core.common.bean.OrderBean;
 import org.rk.core.common.util.RKAssert;
 import org.rk.core.common.util.RkObjectUtil;
 import org.rk.core.common.util.RkStrUtil;
 import org.rk.core.domain.menu.CoreAdminMenu;
-import org.rk.core.domain.service.ICoreAdminMenuService;
 import org.rk.core.jdbc.dao.util.Condition;
 import org.rk.core.pubServer.service.ModelService;
-import org.rk.core.user.service.ICorePermService;
 import org.rk.core.user.userPerm.CorePerm;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -91,5 +91,15 @@ public class CoreAdminMenuService extends ModelService<CoreAdminMenu> implements
 			newMenuList.add(coreAdminMenu);
 		}
 		return newMenuList;
+	}
+	
+	@Override
+	@Transactional(readOnly=true)
+	public List<CoreAdminMenu> selectByListByPermIds(List<Long> permIdList){
+		List<CoreAdminMenu> result=modelDao.queryForListByPermIds(permIdList);
+		if(!RkObjectUtil.isEmpty(result)){
+			return result;
+		}
+		return Collections.emptyList();
 	}
 }

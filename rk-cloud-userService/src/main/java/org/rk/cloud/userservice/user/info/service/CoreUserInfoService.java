@@ -9,13 +9,13 @@ import javax.annotation.Resource;
 
 import org.rk.cloud.userservice.user.info.CoreUserInfo;
 import org.rk.cloud.userservice.user.info.dao.ICoreUserInfoDao;
+import org.rk.cloud.userservice.user.user.service.ICoreUserService;
 import org.rk.core.common.bean.OrderBean;
 import org.rk.core.common.bean.PageData;
 import org.rk.core.common.util.RKBeanUtil;
 import org.rk.core.common.util.RkObjectUtil;
 import org.rk.core.jdbc.dao.util.Condition;
 import org.rk.core.pubServer.service.ModelService;
-import org.rk.core.user.service.ICoreUserService;
 import org.rk.core.user.user.CoreUser;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

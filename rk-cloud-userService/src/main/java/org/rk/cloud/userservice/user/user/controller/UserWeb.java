@@ -10,12 +10,12 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.rk.cloud.userservice.user.user.service.ICoreUserService;
 import org.rk.core.auth.util.SecurityUtil;
 import org.rk.core.common.bean.PageData;
 import org.rk.core.common.constant.RkConst;
 import org.rk.core.common.util.RkObjectUtil;
 import org.rk.core.pubServer.controller.BaseController;
-import org.rk.core.user.service.ICoreUserService;
 import org.rk.core.user.user.CoreUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -48,7 +48,7 @@ public class UserWeb extends BaseController<CoreUser> {
 	public @ResponseBody Object queryPage(int start, int length, int draw, String userName) {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("userName", "%" + userName + "%");
-		PageData page = new PageData();
+		PageData page = new PageData(); 
 		page.setStart(start);
 		page.setLength(length);
 		page.setDraw(draw);

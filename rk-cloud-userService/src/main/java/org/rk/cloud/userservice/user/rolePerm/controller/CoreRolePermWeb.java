@@ -6,9 +6,9 @@ package org.rk.cloud.userservice.user.rolePerm.controller;
 
 import javax.annotation.Resource;
 
+import org.rk.cloud.userservice.user.rolePerm.service.ICoreRolePermService;
 import org.rk.core.pubServer.controller.BaseController;
 import org.rk.core.user.rolePerm.CoreRolePerm;
-import org.rk.core.user.service.ICoreRolePermService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 

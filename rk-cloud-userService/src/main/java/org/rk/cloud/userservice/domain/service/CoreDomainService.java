@@ -8,12 +8,11 @@ import javax.annotation.Resource;
 
 import org.rk.cloud.userservice.domain.dao.ICoreDomainDao;
 import org.rk.cloud.userservice.unit.unit.service.ICoreUnitService;
+import org.rk.cloud.userservice.user.user.service.ICoreUserService;
 import org.rk.cloud.userservice.util.UserSysConst;
 import org.rk.core.common.bean.PageData;
 import org.rk.core.domain.domain.CoreDomain;
-import org.rk.core.domain.service.ICoreDomainService;
 import org.rk.core.pubServer.service.ModelService;
-import org.rk.core.user.service.ICoreUserService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

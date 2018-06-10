@@ -78,7 +78,7 @@ define(['jquery',rkjsPath+'rkUtil.js',rkjsPath+'rkAlert.sweet.js',rkjsPath+'rkAj
 	};
 	var rkDic={
 			rkDicKey:"rk_dic_store",
-			dicUrl:"/rk/web/core/sys/dictionary/queryDicListByValue",
+			dicUrl:"/sysservice/rk/web/core/sys/dictionary/queryDicListByValue",
 			//dicObj:{code:"SF",name:"是否",childData:[{code:"1",name:"是"},{code:"0",name:"否"}]},
 			setDic:function(dicObj){
 				var allDicObj=[];

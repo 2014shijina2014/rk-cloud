@@ -1,14 +1,15 @@
 package org.rk.cloud.userservice.user.permission.service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.annotation.Resource;
 
 import org.rk.cloud.userservice.user.permission.dao.ICorePermDao;
+import org.rk.core.common.util.RkObjectUtil;
 import org.rk.core.jdbc.dao.util.ParamMap;
 import org.rk.core.pubServer.service.ModelService;
-import org.rk.core.user.service.ICorePermService;
 import org.rk.core.user.userPerm.CorePerm;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -41,5 +42,15 @@ public class CorePermService extends ModelService<CorePerm> implements ICorePerm
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	@Override
+	@Transactional(readOnly=true)
+	public List<CorePerm> selectByListByPermIds(List<Long> permIdList){
+		List<CorePerm> result=modelDao.queryForListByPermIds(permIdList);
+		if(!RkObjectUtil.isEmpty(result)){
+			return result;
+		}
+		return Collections.emptyList();
 	}
 }

@@ -5,7 +5,6 @@
 package org.rk.cloud.userservice.user.userRole.controller;
 
 import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.rk.core.auth.util.SecurityUtil;
 import org.rk.core.common.util.RkObjectUtil;
 import org.rk.core.user.userRole.CoreUserRole;
 import org.springframework.stereotype.Controller;
@@ -24,10 +23,8 @@ public class CoreUserRoleAdmin extends CoreUserRoleWeb{
 	@RequestMapping(value="save",  method = RequestMethod.POST)
 	public @ResponseBody Object save(CoreUserRole coreUserRole){
 		if(RkObjectUtil.isEmpty(coreUserRole.getId())){
-			coreUserRole.setCreator(SecurityUtil.getUserName());
 			getCoreUserRoleService().insertModel(coreUserRole);
 		}else{
-			coreUserRole.setUpdator(SecurityUtil.getUserName());
 			getCoreUserRoleService().updateModel(coreUserRole);
 		}
 		return ajaxSucc("保存成功");

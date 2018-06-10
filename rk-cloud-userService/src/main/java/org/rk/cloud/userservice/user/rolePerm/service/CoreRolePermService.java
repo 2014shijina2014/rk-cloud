@@ -12,7 +12,6 @@ import org.rk.core.common.util.RkObjectUtil;
 import org.rk.core.jdbc.dao.util.ParamMap;
 import org.rk.core.pubServer.service.ModelService;
 import org.rk.core.user.rolePerm.CoreRolePerm;
-import org.rk.core.user.service.ICoreRolePermService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -38,6 +37,16 @@ public class CoreRolePermService extends ModelService<CoreRolePerm> implements I
 		ParamMap pm=new ParamMap("roleId", roleId);
 		paramMapList.add(pm);
 		List<CoreRolePerm> result=modelDao.queryForList(getPojoClass(), paramMapList);
+		if(!RkObjectUtil.isEmpty(result)){
+			return result;
+		}
+		return Collections.emptyList();
+	}
+	
+	@Override
+	@Transactional(readOnly=true)
+	public List<CoreRolePerm> selectByListByRoleIds(List<Long> roleIdList){
+		List<CoreRolePerm> result=modelDao.queryForListByRoleIds(roleIdList);
 		if(!RkObjectUtil.isEmpty(result)){
 			return result;
 		}

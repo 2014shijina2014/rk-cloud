@@ -3,6 +3,8 @@
  */
 package org.rk.cloud.userservice.module.dao;
 
+import java.util.List;
+
 import org.rk.core.domain.module.CoreModule;
 import org.rk.core.jdbc.dao.IDBDao;
 
@@ -14,5 +16,7 @@ import org.rk.core.jdbc.dao.IDBDao;
 public interface ICoreModuleDao extends IDBDao<CoreModule> {
 
 	boolean deleteById(Long id);
+
+	List<CoreModule> queryForListByModuleCodes(List<String> moduleCodeList);
 
 }

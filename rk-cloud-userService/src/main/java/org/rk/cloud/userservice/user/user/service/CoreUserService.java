@@ -25,7 +25,6 @@ import org.rk.core.common.util.RkStrUtil;
 import org.rk.core.common.util.encrypt.MD5Util;
 import org.rk.core.jdbc.dao.util.ParamMap;
 import org.rk.core.pubServer.service.ModelService;
-import org.rk.core.user.service.ICoreUserService;
 import org.rk.core.user.user.CoreUser;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

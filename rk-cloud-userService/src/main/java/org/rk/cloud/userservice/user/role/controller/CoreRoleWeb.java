@@ -11,9 +11,9 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.rk.cloud.userservice.user.role.service.ICoreRoleService;
 import org.rk.core.common.util.RkObjectUtil;
 import org.rk.core.pubServer.controller.BaseController;
-import org.rk.core.user.service.ICoreRoleService;
 import org.rk.core.user.userRole.CoreRole;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

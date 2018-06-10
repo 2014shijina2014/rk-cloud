@@ -5,9 +5,9 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.rk.cloud.userservice.user.permission.service.ICorePermService;
 import org.rk.core.common.bean.PageData;
 import org.rk.core.pubServer.controller.BaseController;
-import org.rk.core.user.service.ICorePermService;
 import org.rk.core.user.userPerm.CorePerm;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

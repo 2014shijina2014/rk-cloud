@@ -11,12 +11,12 @@ import javax.annotation.Resource;
 
 import org.rk.cloud.userservice.user.info.CoreUserInfo;
 import org.rk.cloud.userservice.user.info.service.ICoreUserInfoService;
+import org.rk.cloud.userservice.user.user.service.ICoreUserService;
 import org.rk.core.auth.util.SecurityUtil;
 import org.rk.core.common.bean.PageData;
 import org.rk.core.common.util.RKAlert;
 import org.rk.core.common.util.RkObjectUtil;
 import org.rk.core.pubServer.controller.BaseController;
-import org.rk.core.user.service.ICoreUserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

@@ -6,10 +6,14 @@ package org.rk.cloud.zuul.filter;
 import java.net.URL;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import org.rk.core.auth.util.SecurityUtil;
 import org.rk.core.common.bean.JsonMsg;
 import org.rk.core.common.constant.RkConst;
+import org.rk.core.common.util.LoadPropSourceUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
 import org.springframework.core.Ordered;
@@ -47,9 +51,14 @@ public class RateLimitZuulFilter extends ZuulFilter {
 
 	@Override
 	public Object run() {
-		String goalRateLimit = env.getProperty("zull.goalRateLimit", "10");
+		String goalRateLimit =LoadPropSourceUtil.getValueForDefault("zull.goalRateLimit", "10");
 		try {
 			RequestContext context = RequestContext.getCurrentContext();
+			HttpServletRequest request = context.getRequest();
+			HttpSession session = request.getSession();
+			SecurityUtil.getUser();
+			Object obj = session.getAttribute("session");
+			session.setAttribute("username", "testsession");
 			HttpServletResponse response = context.getResponse();
 			String key = null;
 			// 对于service格式的路由

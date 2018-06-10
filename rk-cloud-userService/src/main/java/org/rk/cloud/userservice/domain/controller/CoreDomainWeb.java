@@ -10,10 +10,9 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
-import org.rk.core.auth.util.SecurityUtil;
+import org.rk.cloud.userservice.domain.service.ICoreDomainService;
 import org.rk.core.common.bean.PageData;
 import org.rk.core.domain.domain.CoreDomain;
-import org.rk.core.domain.service.ICoreDomainService;
 import org.rk.core.pubServer.controller.BaseController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,9 +29,11 @@ public class CoreDomainWeb extends BaseController<CoreDomain> {
 	private ICoreDomainService coreDomainService;
 
 	@RequestMapping(value = "queryPage", method = RequestMethod.POST)
-	public @ResponseBody Object queryPage(int start, int length, int draw, String domainName) {
+	public @ResponseBody Object queryPage(int start, int length, int draw, String domainName, String name, String ownerNum) {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("domainName", "%" + domainName + "%");
+		params.put("name", "%" + name + "%");
+		params.put("ownerNum", ownerNum);
 		PageData page = new PageData();
 		page.setStart(start);
 		page.setLength(length);
@@ -41,11 +42,11 @@ public class CoreDomainWeb extends BaseController<CoreDomain> {
 		return page;
 	}
 	@RequestMapping(value = "queryList", method = RequestMethod.POST)
-	public @ResponseBody Object queryPage(String domainName,String name) {
+	public @ResponseBody Object queryList(String domainName,String name, String ownerNum) {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("domainName", "%" + domainName + "%");
 		params.put("name", "%" + name + "%");
-		params.put("owner", SecurityUtil.getUserName());
+		params.put("ownerNum", ownerNum);
 		List<CoreDomain> domainList = coreDomainService.selectModelList(params);
 		return domainList;
 	}

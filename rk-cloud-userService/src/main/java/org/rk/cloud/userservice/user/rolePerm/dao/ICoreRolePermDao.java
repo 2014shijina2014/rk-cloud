@@ -3,6 +3,8 @@
  */
 package org.rk.cloud.userservice.user.rolePerm.dao;
 
+import java.util.List;
+
 import org.rk.core.jdbc.dao.IDBDao;
 import org.rk.core.user.rolePerm.CoreRolePerm;
 
@@ -14,5 +16,7 @@ import org.rk.core.user.rolePerm.CoreRolePerm;
 public interface ICoreRolePermDao extends IDBDao<CoreRolePerm> {
 
 	boolean deleteById(Long id);
+
+	List<CoreRolePerm> queryForListByRoleIds(List<Long> roleIdList);
 
 }
