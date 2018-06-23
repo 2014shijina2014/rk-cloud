@@ -11,7 +11,7 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 @EnableDiscoveryClient
 @EnableFeignClients
 @EnableCircuitBreaker
-@EnableCaching
+//@EnableCaching
 public class RkCloudUserServiceApplication {
 
 	public static void main(String[] args) {
